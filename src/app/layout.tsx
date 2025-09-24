@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -18,11 +19,98 @@ const bebas = Bebas_Neue({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Super Shines | Mobile Detailing That Comes To You",
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AutoDetailingService",
+  name: "Super Shines",
+  alternateName: "Super Shines Mobile Detailing",
+  url: "https://supershines.com",
   description:
-    "Super Shines delivers premium mobile car detailing with pro-level finishes, on your schedule, wherever you are.",
-}; 
+    "Super Shines delivers premium mobile auto detailing for St. Petersburg, Gulfport, Seminole, Clearwater Beach, Dunedin, Palm Harbor, and the greater Pinellas County area.",
+  image: "https://supershines.com/images/hero-detailing.jpg",
+  telephone: "+1-800-555-0123",
+  priceRange: "$$",
+  areaServed: [
+    { "@type": "City", name: "St. Petersburg", addressRegion: "FL" },
+    { "@type": "City", name: "Gulfport", addressRegion: "FL" },
+    { "@type": "City", name: "Seminole", addressRegion: "FL" },
+    { "@type": "City", name: "Pinellas Park", addressRegion: "FL" },
+    { "@type": "City", name: "Safety Harbor", addressRegion: "FL" },
+    { "@type": "City", name: "Palm Harbor", addressRegion: "FL" },
+    { "@type": "City", name: "Dunedin", addressRegion: "FL" },
+    { "@type": "City", name: "Clearwater Beach", addressRegion: "FL" },
+    { "@type": "AdministrativeArea", name: "Pinellas County", addressRegion: "FL" },
+  ],
+  serviceType: [
+    "Mobile exterior detailing",
+    "Mobile interior detailing",
+    "Full service detailing",
+    "Fleet detailing",
+  ],
+  sameAs: [
+    "https://facebook.com",
+    "https://instagram.com",
+    "https://linkedin.com",
+    "https://youtube.com",
+  ],
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://supershines.com"),
+  title: {
+    default: "Super Shines | Mobile Detailing That Comes To You",
+    template: "%s | Super Shines Mobile Detailing",
+  },
+  description:
+    "Super Shines provides premium mobile car detailing across St. Petersburg, Gulfport, Seminole, Clearwater Beach, and Pinellas County with concierge-level service.",
+  keywords: [
+    "mobile car detailing St. Petersburg",
+    "auto detailing Seminole",
+    "ceramic free detailing Pinellas Park",
+    "interior car cleaning Clearwater Beach",
+    "exterior detail Gulfport",
+    "mobile auto spa Pinellas County",
+    "Super Shines detailing",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Super Shines | Mobile Detailing That Comes To You",
+    description:
+      "Concierge mobile detailing for St. Petersburg, Seminole, Gulfport, Clearwater Beach, and the surrounding Pinellas County communities.",
+    url: "https://supershines.com",
+    siteName: "Super Shines",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/hero-detailing.jpg",
+        width: 1600,
+        height: 900,
+        alt: "Super Shines mobile detailing in St. Petersburg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Super Shines | Mobile Detailing That Comes To You",
+    description:
+      "Premium mobile auto detailing serving St. Petersburg, Gulfport, Seminole, and Clearwater Beach.",
+    images: ["/images/hero-detailing.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default function RootLayout({
   children,
@@ -34,6 +122,13 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${bebas.variable} antialiased font-sans bg-surface text-ink`}
       >
+        <Script
+          id="ld-json-super-shines"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+        >
+          {JSON.stringify(structuredData)}
+        </Script>
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

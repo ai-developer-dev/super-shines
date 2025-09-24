@@ -144,13 +144,18 @@ export function SiteHeader() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs border-l border-border/60 bg-surface">
-              <SheetHeader>
+            <SheetContent
+              side="right"
+              className="w-full max-w-xs border-l border-border/60 bg-surface px-6 pb-10 pt-8"
+            >
+              <SheetHeader className="px-0">
                 <SheetTitle>
                   <Logo variant="dark" />
                 </SheetTitle>
                 <SheetDescription className="text-left text-sm text-muted-foreground">
-                  Premium detailing that meets you where you are.
+                  <span className="block pt-2">
+                    Premium detailing that meets you where you are.
+                  </span>
                 </SheetDescription>
               </SheetHeader>
               <nav className="mt-6 flex flex-col gap-4">
