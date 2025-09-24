@@ -18,7 +18,7 @@ const corePackages = [
       "Streak-free window shine",
       "Premium wax finish for lasting protection",
     ],
-    image: "/images/service-exterior.jpg",
+    image: "/images/service-exterior-detail.jpg",
   },
   {
     title: "Interior Only Detail",
