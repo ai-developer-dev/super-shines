@@ -45,7 +45,10 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div className="space-y-6">
-            <Logo className="text-secondary-foreground" />
+            <Logo
+              variant="light"
+              className="drop-shadow-[0_0_28px_rgba(72,163,254,0.35)]"
+            />
             <p className="text-base text-secondary-foreground/70">
               Super Shines delivers pro-grade detailing wherever you are. Book in
               minutes and our vetted specialists bring the studio to your
@@ -53,9 +56,8 @@ export function SiteFooter() {
             </p>
             <div className="space-y-2 text-sm">
               <p className="font-semibold uppercase tracking-[0.3em] text-secondary-foreground/60">
-                Visit
+                Get in touch
               </p>
-              <p>1450 Sunset Avenue, Suite 200<br />Los Angeles, CA 90028</p>
               <p>
                 <a href="tel:+18005550123" className="hover:underline">
                   (800) 555-0123

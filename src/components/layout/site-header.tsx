@@ -22,6 +22,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
+import { GetMyShineDialog } from "@/components/booking/get-my-shine-dialog";
 import { Menu } from "lucide-react";
 
 const services = [
@@ -75,7 +76,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Logo className="shrink-0" />
+        <Logo className="shrink-0" variant="dark" />
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList className="flex items-center gap-1 text-sm font-medium text-ink/80">
             <NavigationMenuItem>
@@ -125,9 +126,11 @@ export function SiteHeader() {
           >
             Call (800) 555-0123
           </Link>
-          <Button asChild className="rounded-full px-6 text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]">
-            <Link href="#booking">Get My Shine</Link>
-          </Button>
+          <GetMyShineDialog>
+            <Button className="rounded-full px-6 text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]">
+              Get My Shine
+            </Button>
+          </GetMyShineDialog>
         </div>
         <div className="lg:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
@@ -144,7 +147,7 @@ export function SiteHeader() {
             <SheetContent side="right" className="w-full max-w-xs border-l border-border/60 bg-surface">
               <SheetHeader>
                 <SheetTitle>
-                  <Logo />
+                  <Logo variant="dark" />
                 </SheetTitle>
                 <SheetDescription className="text-left text-sm text-muted-foreground">
                   Premium detailing that meets you where you are.
@@ -192,13 +195,17 @@ export function SiteHeader() {
                   >
                     Call us at (800) 555-0123
                   </Link>
-                  <Button
-                    asChild
-                    className="w-full rounded-full text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]"
-                    onClick={() => setOpen(false)}
+                  <GetMyShineDialog
+                    onOpenChange={(next) => {
+                      if (next) {
+                        setOpen(false);
+                      }
+                    }}
                   >
-                    <Link href="#booking">Book a Detail</Link>
-                  </Button>
+                    <Button className="w-full rounded-full text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]">
+                      Book a Detail
+                    </Button>
+                  </GetMyShineDialog>
                   <Button
                     variant="outline"
                     asChild

@@ -13,9 +13,11 @@ import { Check, Loader2 } from "lucide-react";
 export function GetMyShineDialog({
   children,
   className,
+  onOpenChange,
 }: {
   children: React.ReactNode;
   className?: string;
+  onOpenChange?: (open: boolean) => void;
 }) {
   const [open, setOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -38,13 +40,20 @@ export function GetMyShineDialog({
       console.table(payload);
       setSubmitting(false);
       setOpen(false);
+      onOpenChange?.(false);
       setMake("");
       setModel("");
     }, 1200);
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog
+      open={open}
+      onOpenChange={(next) => {
+        setOpen(next);
+        onOpenChange?.(next);
+      }}
+    >
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent
         className={cn(
