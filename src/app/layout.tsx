@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { LocalBusinessSchema, ServiceAreaSchema } from "@/components/seo/structured-data";
 import { generateSEOMetadata } from "@/components/seo/seo-metadata";
-import { structuredData } from "@/lib/seo-config";
+import { structuredData as seoStructuredData } from "@/lib/seo-config";
 
 const poppins = Poppins({
   variable: "--font-super-sans",
@@ -91,7 +91,7 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="beforeInteractive"
         >
-          {JSON.stringify(structuredData.organization)}
+          {JSON.stringify(seoStructuredData.organization)}
         </Script>
         <LocalBusinessSchema />
         <ServiceAreaSchema />
