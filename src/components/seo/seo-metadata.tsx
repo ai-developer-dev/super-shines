@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { seoConfig, pageMetadata } from "@/lib/seo-config"
+import { seoConfig } from "@/lib/seo-config"
 
 interface GenerateMetadataProps {
   title?: string
@@ -65,13 +65,13 @@ export function generateSEOMetadata({
         alt: img.alt || finalTitle,
       })),
       locale: seoConfig.openGraph.locale,
-      type: type as any,
+      type,
       publishedTime,
       modifiedTime,
       authors: author ? [author] : undefined,
     },
     twitter: {
-      card: seoConfig.twitter.cardType as any,
+      card: "summary_large_image",
       title: finalTitle,
       description: finalDescription,
       images: finalImages.map(img => img.url),
