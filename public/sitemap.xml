@@ -1,47 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Homepage - Highest Priority -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://supershines.com/</loc>
-    <lastmod>2024-01-14</lastmod>
+    <loc>https://supershines.com</loc>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Blog Index Page -->
   <url>
     <loc>https://supershines.com/blog</loc>
-    <lastmod>2024-01-14</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Individual Blog Posts -->
   <url>
     <loc>https://supershines.com/blog/touch-ups-between-details</loc>
-    <lastmod>2024-01-14</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://supershines.com/blog/interior-habits</loc>
-    <lastmod>2024-01-14</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://supershines.com/blog/ev-road-trip-prep</loc>
-    <lastmod>2024-01-14</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
     <loc>https://supershines.com/blog/steam-vs-shampoo</loc>
-    <lastmod>2024-01-14</lastmod>
+    <lastmod>2025-01-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
