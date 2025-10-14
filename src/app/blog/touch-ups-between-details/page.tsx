@@ -1,16 +1,49 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { generateArticleMetadata } from "@/components/seo/seo-metadata";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/seo/structured-data";
 
-export const metadata: Metadata = {
-  title: "5 Simple Touch-Ups To Keep Your Detail Fresh | Super Shines",
-  description:
-    "Keep your vehicle looking freshly detailed with five quick weekly touch-ups you can do in under 20 minutes.",
-};
+export const metadata: Metadata = generateArticleMetadata({
+  title: "5 Essential Touch-Ups Between Professional Car Details",
+  description: "Keep your vehicle looking freshly detailed with five quick weekly touch-ups. Expert tips from Super Shines' professional detailers to maintain that showroom shine.",
+  keywords: [
+    "car maintenance between details",
+    "quick car cleaning tips",
+    "maintain car detail",
+    "weekly car care",
+    "extend detail life",
+    "car touch up tips",
+  ],
+  path: "/blog/touch-ups-between-details",
+  publishedTime: "2024-01-10T08:00:00Z",
+  author: "Super Shines Team",
+  images: [{
+    url: "/images/service-exterior-detail.jpg",
+    width: 1200,
+    height: 630,
+    alt: "Car detailing touch-up tips"
+  }],
+});
 
 export default function TouchUpsBetweenDetailsPage() {
   return (
-    <main className="bg-white py-20">
-      <article className="mx-auto flex max-w-3xl flex-col gap-10 px-6">
+    <>
+      <ArticleSchema
+        title="5 Essential Touch-Ups Between Professional Car Details"
+        description="Keep your vehicle looking freshly detailed with five quick weekly touch-ups. Expert tips from Super Shines' professional detailers."
+        datePublished="2024-01-10T08:00:00Z"
+        image="https://supershines.com/images/service-exterior-detail.jpg"
+        url="https://supershines.com/blog/touch-ups-between-details"
+      />
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://supershines.com" },
+          { name: "Blog", url: "https://supershines.com/blog" },
+          { name: "5 Touch-Ups Between Details", url: "https://supershines.com/blog/touch-ups-between-details" }
+        ]} 
+      />
+      <main className="bg-white py-20">
+        <article className="mx-auto flex max-w-3xl flex-col gap-10 px-6">
         <nav className="text-sm text-muted-foreground">
           <Link href="/" className="hover:text-primary">
             Home
@@ -112,5 +145,6 @@ export default function TouchUpsBetweenDetailsPage() {
         </section>
       </article>
     </main>
+    </>
   );
 }

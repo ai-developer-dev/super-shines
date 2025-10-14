@@ -4,6 +4,9 @@ import { Bebas_Neue, Poppins } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { LocalBusinessSchema, ServiceAreaSchema } from "@/components/seo/structured-data";
+import { generateSEOMetadata } from "@/components/seo/seo-metadata";
+import { structuredData } from "@/lib/seo-config";
 
 const poppins = Poppins({
   variable: "--font-super-sans",
@@ -55,62 +58,23 @@ const structuredData = {
   ],
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://supershines.com"),
-  title: {
-    default: "Super Shines | Mobile Detailing That Comes To You",
-    template: "%s | Super Shines Mobile Detailing",
-  },
-  description:
-    "Super Shines provides premium mobile car detailing across St. Petersburg, Gulfport, Seminole, Clearwater Beach, and Pinellas County with concierge-level service.",
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Mobile Car Detailing St. Petersburg & Pinellas County | Super Shines",
+  description: "Premium mobile auto detailing that comes to you. Serving St. Petersburg, Gulfport, Seminole, Clearwater Beach, and all of Pinellas County. Professional car cleaning at your location.",
   keywords: [
-    "mobile car detailing St. Petersburg",
-    "auto detailing Seminole",
-    "ceramic free detailing Pinellas Park",
-    "interior car cleaning Clearwater Beach",
-    "exterior detail Gulfport",
-    "mobile auto spa Pinellas County",
-    "Super Shines detailing",
+    "mobile car detailing St. Petersburg FL",
+    "auto detailing Seminole Florida", 
+    "car detailing service Pinellas Park",
+    "mobile detailing Clearwater Beach",
+    "car wash Gulfport FL",
+    "vehicle detailing Pinellas County",
+    "mobile car wash near me",
+    "professional auto detailing",
+    "ceramic coating St Pete",
+    "paint correction Florida",
   ],
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Super Shines | Mobile Detailing That Comes To You",
-    description:
-      "Concierge mobile detailing for St. Petersburg, Seminole, Gulfport, Clearwater Beach, and the surrounding Pinellas County communities.",
-    url: "https://supershines.com",
-    siteName: "Super Shines",
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: "/images/hero-detailing.jpg",
-        width: 1600,
-        height: 900,
-        alt: "Super Shines mobile detailing in St. Petersburg",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Super Shines | Mobile Detailing That Comes To You",
-    description:
-      "Premium mobile auto detailing serving St. Petersburg, Gulfport, Seminole, and Clearwater Beach.",
-    images: ["/images/hero-detailing.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+  path: "/",
+});
 
 export default function RootLayout({
   children,
@@ -127,8 +91,10 @@ export default function RootLayout({
           type="application/ld+json"
           strategy="beforeInteractive"
         >
-          {JSON.stringify(structuredData)}
+          {JSON.stringify(structuredData.organization)}
         </Script>
+        <LocalBusinessSchema />
+        <ServiceAreaSchema />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

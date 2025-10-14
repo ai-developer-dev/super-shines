@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { generateSEOMetadata } from "@/components/seo/seo-metadata";
+import { BreadcrumbSchema } from "@/components/seo/structured-data";
 
 const posts = [
   {
@@ -28,14 +30,32 @@ const posts = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Super Shines Tips & Guides",
-  description: "Detailing tips and maintenance guides from the Super Shines team.",
-};
+export const metadata: Metadata = generateSEOMetadata({
+  title: "Auto Detailing Tips & Car Care Blog",
+  description: "Expert car care tips, detailing guides, and vehicle maintenance advice from Super Shines' professional detailers. Learn how to keep your car looking showroom fresh.",
+  keywords: [
+    "car care tips",
+    "auto detailing guide", 
+    "vehicle maintenance",
+    "car cleaning tips",
+    "detailing blog",
+    "car wash tips",
+    "interior cleaning guide",
+    "paint protection tips",
+  ],
+  path: "/blog",
+});
 
 export default function BlogIndexPage() {
   return (
-    <main className="bg-[#f7f9fc] py-20">
+    <>
+      <BreadcrumbSchema 
+        items={[
+          { name: "Home", url: "https://supershines.com" },
+          { name: "Blog", url: "https://supershines.com/blog" }
+        ]} 
+      />
+      <main className="bg-[#f7f9fc] py-20">
       <div className="mx-auto flex max-w-4xl flex-col gap-12 px-6">
         <header className="space-y-4">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
@@ -67,5 +87,6 @@ export default function BlogIndexPage() {
         </div>
       </div>
     </main>
+    </>
   );
 }
