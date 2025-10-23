@@ -144,7 +144,7 @@ export function SiteHeader() {
             Call (800) 555-0123
           </Link>
           <GetMyShineDialog>
-            <Button className="rounded-full px-6 text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]">
+            <Button className="rounded-full px-6 text-sm font-semibold shadow-[0_18px_36px_rgba(0,82,204,0.25)]">
               Get My Shine
             </Button>
           </GetMyShineDialog>
@@ -230,7 +230,7 @@ export function SiteHeader() {
                       }
                     }}
                   >
-                    <Button className="w-full rounded-full text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]">
+                    <Button className="w-full rounded-full text-sm font-semibold shadow-[0_18px_36px_rgba(0,82,204,0.25)]">
                       Book a Detail
                     </Button>
                   </GetMyShineDialog>

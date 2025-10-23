@@ -37,7 +37,7 @@ export function HeroSection() {
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <GetMyShineDialog>
-              <Button className="rounded-full px-8 py-6 text-base font-semibold shadow-[0_22px_40px_rgba(18,136,254,0.26)]">
+              <Button className="rounded-full px-8 py-6 text-base font-semibold shadow-[0_22px_40px_rgba(0,82,204,0.26)]">
                 <span className="flex items-center justify-center gap-2 whitespace-nowrap">
                   Get My Shine
                   <ArrowRight className="h-4 w-4" />

@@ -148,7 +148,7 @@ export function GetMyShineDialog({
             <Button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-5 text-sm font-semibold shadow-[0_18px_36px_rgba(18,136,254,0.25)]"
+              className="inline-flex items-center justify-center gap-2 rounded-full px-6 py-5 text-sm font-semibold shadow-[0_18px_36px_rgba(0,82,204,0.25)]"
             >
               {submitting ? (
                 <>

@@ -97,13 +97,13 @@ function StepsGrid({ steps, icon }: StepsGridProps) {
       {steps.map((step, index) => (
         <div
           key={step.title}
-          className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-border bg-white/90 p-6 shadow-[0_18px_40px_rgba(13,44,73,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_24px_55px_rgba(18,136,254,0.22)]"
+          className="group relative flex h-full flex-col gap-4 overflow-hidden rounded-3xl border border-border bg-white/90 p-6 shadow-[0_18px_40px_rgba(13,44,73,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_24px_55px_rgba(0,82,204,0.22)]"
         >
           <span className="pointer-events-none absolute inset-0 -z-10 opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100" aria-hidden>
-            <span className="absolute inset-[15%] rounded-[32px] bg-[radial-gradient(circle_at_30%_30%,rgba(72,163,254,0.25),rgba(18,136,254,0))]" />
-            <span className="absolute inset-[25%] rounded-[40px] bg-[radial-gradient(circle_at_70%_70%,rgba(242,154,5,0.18),rgba(18,136,254,0))]" />
+            <span className="absolute inset-[15%] rounded-[32px] bg-[radial-gradient(circle_at_30%_30%,rgba(0,82,204,0.25),rgba(0,82,204,0))]" />
+            <span className="absolute inset-[25%] rounded-[40px] bg-[radial-gradient(circle_at_70%_70%,rgba(242,154,5,0.18),rgba(0,82,204,0))]" />
           </span>
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_40px_rgba(18,136,254,0.28)]">
+          <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-white shadow-[0_18px_40px_rgba(0,82,204,0.28)]">
             {index + 1}
           </span>
           <div className="flex items-center gap-3">

@@ -47,7 +47,7 @@ export function SiteFooter() {
           <div className="space-y-6">
             <Logo
               variant="light"
-              className="drop-shadow-[0_0_28px_rgba(72,163,254,0.35)]"
+              className="drop-shadow-[0_0_28px_rgba(0,82,204,0.35)]"
             />
             <p className="text-base text-secondary-foreground/70">
               Super Shines delivers pro-grade detailing wherever you are. Book in

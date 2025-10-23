@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#09111d] via-[#10243d] to-[#071423] py-24 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(72,163,254,0.32),_transparent_65%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,82,204,0.32),_transparent_65%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(4,13,24,0.4),_rgba(4,13,24,0.85))]" />
       <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 text-center">
         <Badge
