@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-4">
               <h2 className="text-xl font-semibold text-ink">Introduction</h2>
               <p className="text-muted-foreground">
-                Super Shines ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile auto detailing services and website.
+                Super Shines (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile auto detailing services and website.
               </p>
             </section>
 
@@ -113,7 +113,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-xl font-semibold text-ink">Children's Privacy</h2>
+              <h2 className="text-xl font-semibold text-ink">Children&apos;s Privacy</h2>
               <p className="text-muted-foreground">
                 Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children.
               </p>
@@ -122,7 +122,7 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-4">
               <h2 className="text-xl font-semibold text-ink">Changes to This Policy</h2>
               <p className="text-muted-foreground">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date.
               </p>
             </section>
 
