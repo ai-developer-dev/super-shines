@@ -23,26 +23,35 @@ import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/logo";
 import { GetMyShineDialog } from "@/components/booking/get-my-shine-dialog";
-import { Menu } from "lucide-react";
+import { Menu, Sparkles, Wind, ShieldCheck } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const services = [
+const services: Array<{
+  title: string;
+  description: string;
+  href: string;
+  icon: LucideIcon;
+}> = [
   {
     title: "Signature Full Detail",
     description:
       "Inside and out rejuvenation with ceramic sealant, interior deep clean, and gloss restoration.",
     href: "#services",
+    icon: Sparkles,
   },
   {
     title: "Interior Revival",
     description:
       "Steam, ozone, and fabric protection to reset your cabin to like-new comfort.",
     href: "#services",
+    icon: Wind,
   },
   {
     title: "Exterior Protection",
     description:
       "Foam wash, paint decontamination, and ceramic booster for lasting shine.",
     href: "#services",
+    icon: ShieldCheck,
   },
 ];
 
@@ -83,25 +92,33 @@ export function SiteHeader() {
               <NavigationMenuTrigger className="bg-transparent text-ink/80 hover:text-ink data-[state=open]:text-ink">
                 Services
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="rounded-3xl border border-border bg-surface-alt/95 p-4 shadow-[0_24px_65px_rgba(13,44,73,0.12)]">
-                <ul className="grid gap-2">
-                  {services.map((service) => (
-                    <li key={service.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={service.href}
-                          className="block rounded-2xl p-4 transition hover:bg-muted/80"
-                        >
-                          <p className="text-base font-semibold text-ink">
-                            {service.title}
-                          </p>
-                          <p className="text-sm text-muted-foreground">
-                            {service.description}
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
+              <NavigationMenuContent className="rounded-3xl border border-border bg-surface-alt/95 p-5 shadow-[0_24px_65px_rgba(13,44,73,0.12)]">
+                <ul className="grid w-[480px] gap-3">
+                  {services.map((service) => {
+                    const Icon = service.icon;
+                    return (
+                      <li key={service.title}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            href={service.href}
+                            className="group flex gap-4 rounded-2xl p-4 transition hover:bg-muted/80"
+                          >
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/20">
+                              <Icon className="h-6 w-6" />
+                            </div>
+                            <div className="flex-1 space-y-1">
+                              <p className="text-base font-semibold text-ink">
+                                {service.title}
+                              </p>
+                              <p className="text-sm leading-relaxed text-muted-foreground">
+                                {service.description}
+                              </p>
+                            </div>
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    );
+                  })}
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
@@ -164,17 +181,23 @@ export function SiteHeader() {
                     Services
                   </p>
                   <ul className="mt-3 space-y-2">
-                    {services.map((item) => (
-                      <li key={item.title}>
-                        <Link
-                          href={item.href}
-                          onClick={() => setOpen(false)}
-                          className="block rounded-2xl bg-muted/60 px-4 py-3 text-sm font-semibold text-ink"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
+                    {services.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <li key={item.title}>
+                          <Link
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className="flex items-center gap-3 rounded-2xl bg-muted/60 px-4 py-3 text-sm font-semibold text-ink transition hover:bg-muted/80"
+                          >
+                            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                              <Icon className="h-4 w-4" />
+                            </div>
+                            <span>{item.title}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
                 <Separator />
