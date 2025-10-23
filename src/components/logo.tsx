@@ -18,7 +18,7 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
       )}
     >
       <Image
-        src="/images/super-shines-logo.png"
+        src="/images/super-shines-logo-v2.png"
         alt="Super Shines Auto Detailing"
         width={205}
         height={85}
