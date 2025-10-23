@@ -20,14 +20,14 @@ export function Logo({ className, variant = "dark" }: LogoProps) {
       <Image
         src="/images/super-shines-logo.png"
         alt="Super Shines Auto Detailing"
-        width={180}
-        height={50}
+        width={220}
+        height={65}
         priority
         className={cn(
           "h-auto w-auto object-contain transition-opacity",
           variant === "light" && "brightness-0 invert",
         )}
-        style={{ maxHeight: "45px", width: "auto" }}
+        style={{ maxHeight: "60px", width: "auto" }}
       />
     </Link>
   );
