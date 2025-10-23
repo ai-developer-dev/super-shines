@@ -104,7 +104,7 @@ export function SiteFooter() {
             every driveway.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="#" className="hover:text-white">
+            <Link href="/privacy-policy" className="hover:text-white">
               Privacy
             </Link>
             <Link href="#" className="hover:text-white">
